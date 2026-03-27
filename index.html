@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ru" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Приглашение на свадьбу | Александр и Мария</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,700;1,6..96,400&family=Inter:wght@200;300;400;500&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        espresso: '#1a1412',
+                        cocoa: '#2f2522',
+                        gold: '#b89e7e',
+                        cream: '#f4f1ee',
+                        dark: '#120f0e'
+                    },
+                    fontFamily: {
+                        bodoni: ['"Bodoni Moda"', 'serif'],
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body { background-color: #1a1412; color: #f4f1ee; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+        
+        /* Плавный зум фото */
+        .hero-zoom { animation: slowZoom 20s infinite alternate linear; }
+        @keyframes slowZoom { from { transform: scale(1); } to { transform: scale(1.15); } }
+
+        /* Скроллбар */
+        ::-webkit-scrollbar { width: 4px; }
+        ::-webkit-scrollbar-thumb { background: #b89e7e; }
+
+        /* Эффект для текста */
+        .reveal-text {
+            background: linear-gradient(to right, #b89e7e 50%, #f4f1ee 50%);
+            background-size: 200% 100%;
+            background-position: 100% 0;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            transition: background-position 0.8s ease;
+        }
+        @media (hover: hover) { .reveal-text:hover { background-position: 0 0; } }
+
+        /* Линия таймлайна (адаптивная) */
+        .timeline-line::before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 0;
+            bottom: 0;
+            width: 1px;
+            background: rgba(184, 158, 126, 0.2);
+        }
+        @media (min-width: 768px) {
+            .timeline-line::before { left: 50%; transform: translateX(-50%); }
+        }
+    </style>
+</head>
+<body class="font-sans font-light selection:bg-gold selection:text-espresso">
+
+    <div id="preloader" class="fixed inset-0 z-[100] bg-espresso flex items-center justify-center transition-opacity duration-1000">
+        <div class="text-center px-6">
+            <h1 class="font-bodoni text-4xl md:text-5xl italic text-gold animate-pulse tracking-tighter">A & M</h1>
+        </div>
+    </div>
+
+    <section class="relative h-screen w-full overflow-hidden bg-dark">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=2000" 
+                 class="hero-zoom w-full h-full object-cover grayscale-[20%]" alt="Wedding Hero">
+            <div class="absolute inset-0 bg-gradient-to-b from-dark/60 via-espresso/40 to-espresso"></div>
+        </div>
+        
+        <div class="relative z-10 flex flex-col items-center justify-center h-full text-cream text-center px-4" data-aos="fade-up" data-aos-duration="2000">
+            <span class="uppercase tracking-[0.4em] text-[10px] md:text-xs mb-4 md:mb-6 text-gold">Приглашение на свадьбу</span>
+            <h1 class="font-bodoni text-[12vw] md:text-8xl lg:text-9xl mb-4 md:mb-6 font-light leading-[1.1]">
+                Александр <br> <span class="italic text-gold">&amp;</span> Мария
+            </h1>
+            <div class="w-16 h-px bg-gold/50 my-6 md:my-8"></div>
+            <p class="font-bodoni text-xl md:text-3xl italic tracking-[0.2em] text-cream/90">28 Августа 2026</p>
+            <p class="text-[10px] md:text-xs uppercase tracking-[0.4em] mt-4 text-gold/80">Минск</p>
+        </div>
+
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center opacity-40">
+            <div class="w-px h-12 bg-gold animate-bounce"></div>
+        </div>
+    </section>
+
+    <section class="py-20 md:py-32 px-6 max-w-4xl mx-auto text-center" data-aos="fade-up">
+        <h2 class="font-bodoni text-3xl md:text-6xl mb-8 md:mb-12 italic reveal-text leading-snug">
+            «Два сердца, одна судьба, одна история»
+        </h2>
+        <div class="space-y-6 md:space-y-8 text-cream/70 font-extralight leading-relaxed text-base md:text-lg px-2">
+            <p>Есть дни, которые меняют всё. Мы приглашаем вас стать свидетелями нашего самого важного шага.</p>
+            <p>В этот вечер мы откажемся от суеты, чтобы погрузиться в атмосферу искренности и стиля.</p>
+            <p class="font-medium text-gold uppercase tracking-[0.2em] text-xs pt-4">Ваше присутствие — наш главный подарок.</p>
+        </div>
+    </section>
+
+    <section class="py-20 md:py-24 bg-cocoa/30 border-y border-gold/10 relative overflow-hidden">
+        <div class="max-w-5xl mx-auto px-6 relative z-10">
+            <h2 class="font-bodoni text-4xl md:text-5xl text-center mb-16 md:mb-24 italic text-gold">Тайминг</h2>
+            
+            <div class="relative timeline-line">
+                <div class="relative flex flex-col md:flex-row items-start md:items-center mb-12 md:mb-16" data-aos="fade-up">
+                    <div class="md:w-1/2 md:text-right pl-12 md:pl-0 md:pr-16 order-2 md:order-1">
+                        <span class="font-bodoni text-2xl text-gold italic">15:30</span>
+                        <h3 class="text-sm font-medium uppercase tracking-widest text-cream mt-1">Сбор гостей</h3>
+                        <p class="text-xs text-cream/60 mt-2">Welcome-drink и живая музыка.</p>
+                    </div>
+                    <div class="absolute left-[13px] md:left-1/2 top-1 md:top-auto md:-translate-x-1/2 w-3.5 h-3.5 rounded-full bg-gold border border-espresso z-10 order-1"></div>
+                    <div class="hidden md:block md:w-1/2 order-3"></div>
+                </div>
+
+                <div class="relative flex flex-col md:flex-row items-start md:items-center mb-12 md:mb-16" data-aos="fade-up">
+                    <div class="hidden md:block md:w-1/2 order-1"></div>
+                    <div class="absolute left-[13px] md:left-1/2 top-1 md:top-auto md:-translate-x-1/2 w-3.5 h-3.5 rounded-full bg-gold border border-espresso z-10 order-2"></div>
+                    <div class="md:w-1/2 pl-12 md:pl-16 order-3">
+                        <span class="font-bodoni text-2xl text-gold italic">16:30</span>
+                        <h3 class="text-sm font-medium uppercase tracking-widest text-cream mt-1">Церемония</h3>
+                        <p class="text-xs text-cream/60 mt-2">Обмен клятвами под открытым небом.</p>
+                    </div>
+                </div>
+
+                <div class="relative flex flex-col md:flex-row items-start md:items-center mb-12 md:mb-16" data-aos="fade-up">
+                    <div class="md:w-1/2 md:text-right pl-12 md:pl-0 md:pr-16 order-2 md:order-1">
+                        <span class="font-bodoni text-2xl text-gold italic">18:00</span>
+                        <h3 class="text-sm font-medium uppercase tracking-widest text-cream mt-1">Ужин</h3>
+                        <p class="text-xs text-cream/60 mt-2">Начало банкета и поздравления.</p>
+                    </div>
+                    <div class="absolute left-[13px] md:left-1/2 top-1 md:top-auto md:-translate-x-1/2 w-3.5 h-3.5 rounded-full bg-gold border border-espresso z-10 order-1"></div>
+                    <div class="hidden md:block md:w-1/2 order-3"></div>
+                </div>
+
+                <div class="relative flex flex-col md:flex-row items-start md:items-center" data-aos="fade-up">
+                    <div class="hidden md:block md:w-1/2 order-1"></div>
+                    <div class="absolute left-[13px] md:left-1/2 top-1 md:top-auto md:-translate-x-1/2 w-3.5 h-3.5 rounded-full bg-gold border border-espresso z-10 order-2"></div>
+                    <div class="md:w-1/2 pl-12 md:pl-16 order-3">
+                        <span class="font-bodoni text-2xl text-gold italic">22:00</span>
+                        <h3 class="text-sm font-medium uppercase tracking-widest text-cream mt-1">Торт</h3>
+                        <p class="text-xs text-cream/60 mt-2">Сладкий финал вечера.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 md:py-32 px-6 text-center">
+        <div class="max-w-4xl mx-auto" data-aos="fade-up">
+            <h2 class="font-bodoni text-4xl md:text-5xl mb-6 md:mb-8 italic text-cream">Дресс-код</h2>
+            <p class="text-cream/70 font-light mb-12 max-w-xl mx-auto text-sm md:text-base leading-relaxed">
+                Будем признательны, если вы поддержите палитру нашей свадьбы в своих нарядах:
+            </p>
+            
+            <div class="grid grid-cols-3 sm:flex sm:justify-center gap-6 md:gap-10 mb-16">
+                <div class="flex flex-col items-center">
+                    <div class="w-14 h-14 md:w-20 md:h-20 rounded-full bg-[#f4f1ee] shadow-lg mb-3 border border-gold/10"></div>
+                    <span class="text-[9px] uppercase tracking-tighter text-gold">Крем</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div class="w-14 h-14 md:w-20 md:h-20 rounded-full bg-[#b89e7e] shadow-lg mb-3 border border-gold/10"></div>
+                    <span class="text-[9px] uppercase tracking-tighter text-gold">Золото</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div class="w-14 h-14 md:w-20 md:h-20 rounded-full bg-[#3d312e] shadow-lg mb-3 border border-gold/10"></div>
+                    <span class="text-[9px] uppercase tracking-tighter text-gold">Мокко</span>
+                </div>
+            </div>
+
+            <div class="p-6 md:p-8 border border-gold/20 inline-block bg-cocoa/20">
+                <p class="uppercase tracking-[0.3em] text-[10px] md:text-xs text-gold font-medium">Стиль: Cocktail / Black Tie</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 md:py-32 bg-dark px-4">
+        <div class="max-w-xl mx-auto border border-gold/20 p-8 md:p-12 bg-espresso relative shadow-2xl" data-aos="zoom-in">
+            <h2 class="font-bodoni text-4xl text-center mb-10 italic text-gold">Анкета</h2>
+            
+            <form id="rsvpForm" class="space-y-10 text-cream">
+                <div>
+                    <input type="text" required placeholder="ВАШЕ ИМЯ" class="w-full py-4 bg-transparent border-b border-gold/20 focus:border-gold focus:outline-none transition-all uppercase text-xs tracking-widest placeholder:text-cream/20">
+                </div>
+
+                <div class="space-y-4 text-left">
+                    <p class="font-bodoni text-lg italic text-gold">Присутствие:</p>
+                    <div class="flex flex-col gap-4 text-xs tracking-widest uppercase">
+                        <label class="flex items-center gap-3 cursor-pointer">
+                            <input type="radio" name="p" value="y" checked class="accent-gold w-4 h-4"> Да, буду
+                        </label>
+                        <label class="flex items-center gap-3 cursor-pointer">
+                            <input type="radio" name="p" value="n" class="accent-gold w-4 h-4"> Не смогу
+                        </label>
+                    </div>
+                </div>
+
+                <button type="submit" class="w-full bg-transparent border border-gold/50 text-gold py-5 uppercase text-[10px] tracking-[0.4em] hover:bg-gold hover:text-espresso transition-all font-bold">
+                    Отправить ответ
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="py-16 text-center bg-dark">
+        <h2 class="font-bodoni text-3xl italic text-cream/90 mb-4">A & M</h2>
+        <p class="text-[9px] uppercase tracking-[0.5em] text-gold/40">2026 • Minsk</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+        window.addEventListener('load', () => {
+            const loader = document.getElementById('preloader');
+            loader.style.opacity = '0';
+            setTimeout(() => loader.style.display = 'none', 1000);
+        });
+        document.getElementById('rsvpForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const btn = this.querySelector('button');
+            btn.innerText = 'ОТПРАВЛЕНО';
+            btn.style.borderColor = '#b89e7e';
+            btn.style.color = '#f4f1ee';
+        });
+    </script>
+</body>
+</html>
