@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+
+      <!DOCTYPE html>
 <html lang="ru" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
@@ -34,15 +35,12 @@
     <style>
         body { background-color: #1a1412; color: #f4f1ee; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
         
-        /* Плавный зум фото */
         .hero-zoom { animation: slowZoom 20s infinite alternate linear; }
         @keyframes slowZoom { from { transform: scale(1); } to { transform: scale(1.15); } }
 
-        /* Скроллбар */
         ::-webkit-scrollbar { width: 4px; }
         ::-webkit-scrollbar-thumb { background: #b89e7e; }
 
-        /* Эффект для текста */
         .reveal-text {
             background: linear-gradient(to right, #b89e7e 50%, #f4f1ee 50%);
             background-size: 200% 100%;
@@ -53,7 +51,6 @@
         }
         @media (hover: hover) { .reveal-text:hover { background-position: 0 0; } }
 
-        /* Линия таймлайна (адаптивная) */
         .timeline-line::before {
             content: '';
             position: absolute;
@@ -78,7 +75,7 @@
 
     <section class="relative h-screen w-full overflow-hidden bg-dark">
         <div class="absolute inset-0 z-0">
-            <img src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=2000" 
+            <img src="главная.jpg" 
                  class="hero-zoom w-full h-full object-cover grayscale-[20%]" alt="Wedding Hero">
             <div class="absolute inset-0 bg-gradient-to-b from-dark/60 via-espresso/40 to-espresso"></div>
         </div>
@@ -181,6 +178,30 @@
 
             <div class="p-6 md:p-8 border border-gold/20 inline-block bg-cocoa/20">
                 <p class="uppercase tracking-[0.3em] text-[10px] md:text-xs text-gold font-medium">Стиль: Cocktail / Black Tie</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 md:py-32 bg-cocoa/30 border-y border-gold/10">
+        <div class="max-w-5xl mx-auto px-6" data-aos="fade-up">
+            <h2 class="font-bodoni text-4xl md:text-5xl text-center mb-12 md:mb-16 italic text-gold">Локация</h2>
+            
+            <div class="grid md:grid-cols-2 gap-10 items-center">
+                <div class="space-y-6 text-center md:text-left">
+                    <h3 class="font-bodoni text-2xl md:text-3xl text-cream italic uppercase tracking-wider">The Grand Hall</h3>
+                    <p class="text-cream/70 font-light leading-relaxed">
+                        Минск, ул. Октябрьская, 16 <br>
+                        Индустриальное пространство в самом сердце города.
+                    </p>
+                    <div class="pt-4">
+                        <a href="https://yandex.by/maps/-/CCUeE2S7XB" target="_blank" class="inline-block border border-gold text-gold px-8 py-4 uppercase text-[10px] tracking-[0.3em] hover:bg-gold hover:text-espresso transition duration-500 font-bold">
+                            Открыть в картах
+                        </a>
+                    </div>
+                </div>
+                <div class="h-80 md:h-96 w-full grayscale contrast-125 border border-gold/20">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2351.0422501633513!2d27.56847861601614!3d53.8865768800965!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46dbcfe85d85d773%3A0x6b8d4c39833a6f11!2z0YPQuy4g0J7QutGC0Y_QsdGA0YzRgdC60LDRjyAxNiwg0JzQuNC90YHQug!5e0!3m2!1sru!2sby!4v1620000000000!5m2!1sru!2sby" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
             </div>
         </div>
     </section>
